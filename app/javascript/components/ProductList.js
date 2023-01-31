@@ -16,6 +16,17 @@ const ProductList = () => {
         setProducts(data);
     }
 
+    const deleteProduct = async(id) => {
+        await fetch(`/api/v1/products/${id}`,{
+            method: "DELETE",
+            headers:{
+                'Content-Type': 'application/json',
+                "X-CSRF-Token": document.querySelector("meta[name='csrf-token']").content
+            }
+        });
+        fetchData();
+    }
+
     return (
         <div>
             <table className="border-blue-400">
@@ -24,6 +35,7 @@ const ProductList = () => {
                         <th>No</th>
                         <th>Title</th>
                         <th>Price</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,6 +44,9 @@ const ProductList = () => {
                             <td>{ index + 1 }</td>
                             <td>{ product.title }</td>
                             <td>{ product.price }</td>
+                            <td>
+                                <button onClick={() => deleteProduct(product.id)} className="button is-small is-danger">Delete</button>
+                            </td>
                         </tr>
                     ))}
 
