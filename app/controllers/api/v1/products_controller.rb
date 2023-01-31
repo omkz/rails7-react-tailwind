@@ -17,9 +17,19 @@ module Api
         end
       end
 
+      def update
+        product = Product.find(params[:id])
+        product.update(product_params)
+        render json: product
+      end
+
       def destroy
         @product&.destroy
         render json: { message: 'product deleted!' }
+      end
+
+      def show
+        render json: @product
       end
 
       private

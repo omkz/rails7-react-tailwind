@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -46,6 +45,7 @@ const ProductList = () => {
                             <td>{ product.title }</td>
                             <td>{ product.price }</td>
                             <td>
+                                <Link to={`/edit/${product.id}`} className="button is-small is-info">Edit</Link>
                                 <button onClick={() => deleteProduct(product.id)} className="button is-small is-danger">Delete</button>
                             </td>
                         </tr>
