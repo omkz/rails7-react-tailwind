@@ -29,6 +29,7 @@ const ProductList = () => {
 
     return (
         <div>
+            <Link to="add">Add New</Link>
             <table className="border-blue-400">
                 <thead className='bg-indigo-500'>
                     <tr>
