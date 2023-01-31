@@ -1,12 +1,10 @@
 module Api
   module V1
-    class ProductController < ApplicationController
-
+    class ProductsController < ApplicationController
       def index
         products = Product.all
-        render json :products
+        render json: products
       end
-
 
       private
 
@@ -16,4 +14,3 @@ module Api
     end
   end
 end
-
