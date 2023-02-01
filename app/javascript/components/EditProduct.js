@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const EditProduct = () => {
     const [title, setTitle] = useState('');
     const [price, setPrice] = useState('');
-    const history = useHistory();
+    const navigate = useNavigate();
     const { id } = useParams();
 
     useEffect(() => {
@@ -30,7 +30,7 @@ const EditProduct = () => {
                 "X-CSRF-Token": document.querySelector("meta[name='csrf-token']").content
             }
         });
-        history.push("/");
+        navigate("/");
     }
 
     return (

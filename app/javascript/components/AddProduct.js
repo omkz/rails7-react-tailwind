@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {
     const [title, setTitle] = useState('');
     const [price, setPrice] = useState('');
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const saveProduct = async(e) => {
         e.preventDefault();
@@ -18,7 +18,7 @@ const AddProduct = () => {
                 "X-CSRF-Token": document.querySelector("meta[name='csrf-token']").content
             }
         });
-        history.push("/");
+        navigate("/");
     }
 
     return (
