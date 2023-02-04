@@ -30,7 +30,7 @@ const EditProduct = () => {
                 "X-CSRF-Token": document.querySelector("meta[name='csrf-token']").content
             }
         });
-        navigate("/");
+        navigate("/products");
     }
 
     return (

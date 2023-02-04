@@ -13,9 +13,7 @@
         "
   >
     <div>
-      <a href="#">
-        Hakooi
-      </a>
+      <%= link_to "Hakooi", root_path %>
     </div>
 
     <svg
@@ -45,9 +43,8 @@
       >
 
         <li>
-          <a class="md:p-4 py-2 block hover:text-purple-400" href="#"
-          >Pricing</a
-          >
+          <a class="md:p-4 py-2 block hover:text-purple-400" href="/products"
+          >products</a>
         </li>
 
         <% if user_signed_in? %>

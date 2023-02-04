@@ -28,7 +28,7 @@ const ProductList = () => {
 
     return (
         <div>
-            <Link to="add">Add New</Link>
+            <Link to="/products/add">Add New</Link>
             <table className="border-blue-400">
                 <thead className='bg-indigo-500'>
                     <tr>
@@ -45,7 +45,7 @@ const ProductList = () => {
                             <td>{ product.title }</td>
                             <td>{ product.price }</td>
                             <td>
-                                <Link to={`/edit/${product.id}`} className="button is-small is-info">Edit</Link>
+                                <Link to={`/products/edit/${product.id}`} className="button is-small is-info">Edit</Link>
                                 <button onClick={() => deleteProduct(product.id)} className="button is-small is-danger">Delete</button>
                             </td>
                         </tr>

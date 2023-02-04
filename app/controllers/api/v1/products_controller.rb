@@ -9,7 +9,9 @@ module Api
       end
 
       def create
-        @product = Product.new(product_params)
+        @product = Product.new(product_params) do |product|
+          product.user = current_user
+        end
         if @product.save
           render json: @product, status: :created, location: api_v1_product_url(@product)
         else
