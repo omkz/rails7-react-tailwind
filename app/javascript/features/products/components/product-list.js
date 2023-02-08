@@ -28,7 +28,7 @@ const ProductList = () => {
 
     return (
         <div>
-            <Link to="/products/add">Add New</Link>
+            <Link to="/products/create">Add New</Link>
             <table className="border-blue-400">
                 <thead className='bg-indigo-500'>
                     <tr>
@@ -50,8 +50,6 @@ const ProductList = () => {
                             </td>
                         </tr>
                     ))}
-
-
                 </tbody>
             </table>
         </div>

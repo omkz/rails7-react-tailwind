@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const AddProduct = () => {
+const CreateProduct = () => {
     const [title, setTitle] = useState('');
     const [price, setPrice] = useState('');
     const navigate = useNavigate();
@@ -48,4 +48,4 @@ const AddProduct = () => {
     )
 }
 
-export default AddProduct
+export default CreateProduct
