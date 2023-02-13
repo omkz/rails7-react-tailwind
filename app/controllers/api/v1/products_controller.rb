@@ -4,7 +4,7 @@ module Api
       before_action :set_product, only: [:show, :destroy]
 
       def index
-        products = Product.all
+        products = current_user.products
         render json: products
       end
 
