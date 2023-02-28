@@ -4,7 +4,7 @@ module Api
       before_action :set_product, only: [:show, :destroy]
 
       def index
-        products = Product.all
+        products = Product.all.with_attached_image
         render json: products
       end
 
@@ -37,7 +37,7 @@ module Api
       private
 
       def product_params
-        params.require(:product).permit(:title, :price)
+        params.require(:product).permit(:title, :price, :image)
       end
 
       def set_product

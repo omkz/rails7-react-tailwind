@@ -69,3 +69,7 @@ end
 
 
 gem "devise", "~> 4.8"
+
+gem "rack-cors", "~> 2.0"
+
+gem "jsonapi-serializer", "~> 2.2"
