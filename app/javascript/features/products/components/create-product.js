@@ -6,6 +6,7 @@ const CreateProduct = () => {
     const [title, setTitle] = useState('');
     const [price, setPrice] = useState('');
     const [image, setImage] = useState('');
+    const [preview, setPreview] = useState("");
     const navigate = useNavigate();
 
     const saveProduct = async (e) => {
@@ -27,6 +28,13 @@ const CreateProduct = () => {
 
         navigate("/products");
     }
+
+    const loadImage = (e) => {
+        const image = e.target.files[0];
+        setImage(image);
+        setPreview(URL.createObjectURL(image));
+    };
+
 
     return (
         <div>
@@ -50,9 +58,17 @@ const CreateProduct = () => {
                 <div className="field">
                     <label className="label">Upload Image</label>
                     <div className="control">
-                        <input className="file" onChange={(e) => setImage(e.target.files[0])} type="file" accept="image/*" />
+                        <input className="file" onChange={loadImage} type="file" accept="image/*" />
                     </div>
                 </div>
+
+                {preview ? (
+                    <figure className="image is-128x128">
+                        <img src={preview} alt="Preview Image" />
+                    </figure>
+                ) : (
+                    ""
+                )}
 
                 <div className="field">
                     <div className="control">
