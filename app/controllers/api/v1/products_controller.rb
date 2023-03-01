@@ -5,7 +5,7 @@ module Api
 
       def index
         products = Product.all.with_attached_image
-        render json: products
+        render json: ProductSerializer.new(products).serializable_hash[:data]
       end
 
       def create

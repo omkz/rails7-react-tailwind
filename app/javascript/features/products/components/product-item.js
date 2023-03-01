@@ -1,12 +1,12 @@
 import React from 'react';
-import {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 
 const ProductItem = ({item, onRemove, onUpdate}) => {
     return (
         <li>
-            <span>{item.title}</span>
-            <span>{item.price}</span>
+            <span>{item.attributes.title}</span>
+            <span>{item.attributes.price}</span>
+            <span> <img src={item.attributes.image_url} alt="product image" className="latest-image" /></span>
 
             {onRemove ?
             <button type="button" onClick={() => onRemove(item.id)}>
