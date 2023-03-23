@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
-import ProductList from "../features/products/components/product-list";
-
+import UserProductList from "../features/user/user-product--list";
 
 const Home = () => {
     const [list, setList] = useState([]);
@@ -18,7 +17,7 @@ const Home = () => {
     return (
         <div>
             <h2>This is Home Page</h2>
-            <ProductList list={list} onRemove={false} onUpdate={false}/>
+            <UserProductList list={list}/>
         </div>
     )
 }
