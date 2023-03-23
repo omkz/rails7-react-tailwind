@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import UserProductList from "../features/user/user-product--list";
+import UserProductList from "../features/feed/user-product--list";
 
 const Home = () => {
     const [list, setList] = useState([]);
